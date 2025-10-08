@@ -3,12 +3,14 @@
 }
 
 body {
+    background-color: black;
+    color: white;
     text-align: center;
     margin: 20px
 }
 
 .disclaimer {
-    color: red;
+    color: #000000;
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -56,10 +58,71 @@ body {
     position: fixed;
     background-color: white;
     background-size: cover;
-    border: groove;
-    border-color: red;
+    border: groove 0.8em;
+    border-color: darkred;
 }
 
 .modal-content {
     background-color: white;
+    padding: 5px;
+}
+
+#menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 30;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: whitesmoke;
+    padding: 5px;
+    transition: 1s ease-in-out;
+}
+
+#side-menu.open + #menu-toggle {
+    color: white
+}
+
+#close-menu {
+    top: 10px;
+    left: 260px;
+    font-size: 40px;
+    color: white;
+}
+
+#side-menu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 280px;
+    height: 100%;
+    background: none;
+}
+
+#side-menu.open {
+    left: 0;
+}
+
+#side-menu h3 {
+    color: gold;
+}
+
+#side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+#side-menu li {
+    margin-bottom: 15px;
+}
+
+#side-menu a {
+    color: white;
+    text-decoration: none;
+    display:block;
+}
+
+#side-menu a:hover {
+    color: aqua;
 }

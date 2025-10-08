@@ -4,12 +4,14 @@ const spinButton = document.getElementById(`spinButton`);
 const wheel = document.getElementById(`wheel`);
 const outputDiv = document.getElementById(`output`);
 const messageP = document.getElementById(`message`);
+const menuToggle = document.getElementById(`menu-toggle`);
+const sideMenu = document.getElementById(`side-menu`);
 
 
 //Wheel was more complicated to make and work correctly so placed a spinning image instead.
 //May go back to this once I work on the rest to make it work.
 
-// const sections = [`You WIN!!!`];
+// const sections = ['Try Again', 'Lose', 'You Win!', 'Free Spin!', `You Win!`];
 // const sectionAngle = 360 / sections.length; 
 
 // for (let i = 0; i < sections.length; i++) {
@@ -23,6 +25,20 @@ const messageP = document.getElementById(`message`);
 //setting the state
 let isSpinning = false;
 let currentRotation = 0; //tracks rotation
+
+function toggleMenu() {
+    sideMenu.classList.toggle(`open`);
+}
+menuToggle.addEventListener(`click`, toggleMenu);
+
+const menuLinks = sideMenu.querySelectorAll(`a`);
+for (const link of menuLinks) {
+    link.addEventListener(`click`, () => {
+        if (sideMenu.classList.contains(`open`)) {
+            setTimeout(toggleMenu, 100);
+        }
+    })
+}
 
 //Creating a disclaimer modal at the beginning
 const firstModal = document.createElement(`div`);
@@ -39,8 +55,8 @@ This game is intended for educational purposes only. All activities, simulations
 By playing this game, you acknowledge and agree that all progress and data remain local to your device, and that the developer assumes no responsibility for any misuse or interpretation of the educational content provided.`
 firstModalContent.appendChild(disclaimerText);
 
-const continueButton = document.createElement(`button`);
-continueButton.textContent = `Continue`;
+const continueButton = document.createElement(`img`);
+continueButton.src = `https://imgs.search.brave.com/YjzvgfxNbCVnYJua-mCyUMjzXD5qaSk8xTssWmuy830/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbnNjb3V0LmNv/bS9pY29uL3ByZW1p/dW0vcG5nLTI1Ni10/aHVtYi9jb250aW51/ZS1pY29uLXN2Zy1k/b3dubG9hZC1wbmct/MTI5OTI2MTAucG5n/P2Y9d2VicCZ3PTEy/OA`;
 continueButton.addEventListener(`click`, () => {
     firstModal.style.display = `none`;
     spinButton.disabled = false; //Turns the Spin Button on once Modal closes
