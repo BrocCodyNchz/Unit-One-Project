@@ -77,9 +77,6 @@ spinButton.addEventListener(`click`, function() {
                 emailModal.style.display = `flex`;
             }, popUpDelay);
             spinButton.disabled = true;
-            
-            // outputDiv.style.display = `block`;            
-            //messageP.innerHTML = `<strong>Warning!!!</strong> Scam sites often use these techniques to trick you into sharing your personal information.`;         
         }, spinDurration);
     }
 });
@@ -92,6 +89,6 @@ spinButton.addEventListener(`click`, function() {
     
 //     warningModal.innerHTML = `<strong>Warning!!!</strong> Scam sites often use these techniques to trick you into sharing your personal information.`;
 //     }
-// }
+// 
 
 
