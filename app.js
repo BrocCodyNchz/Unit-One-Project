@@ -26,7 +26,7 @@ firstModalContent.className = `modal-content`;
 const disclaimerText = document.createElement(`p`);
 disclaimerText.className = `disclaimer`;
 disclaimerText.textContent = `DISCLAIMER:
-This game is for educational purposes, helping users learn about common scam techniques. The first task challenges you to use the inspect element tool to find the button to close a pop-up a safe example of scam tactics. No personal data is collected or stored; all progress remains on your device.`
+This game is for educational purposes, helping users learn about common scam techniques. No personal data is collected or stored; all progress remains on your device. The first techinque is hiding the close button on a pop up, use the inspect tool to find the button to close a pop-up a safe example of scam tactics.`
 firstModalContent.appendChild(disclaimerText);
 
 const continueButton = document.createElement(`img`);
@@ -81,14 +81,13 @@ spinButton.addEventListener(`click`, function() {
     }
 });
 
-// function handleEmailSubmission() {
-//     const warningModal = document.querySelector(`#emailModal` `.email-modal-content`);
-//     if (!warningModal) {
-//     //     messageP.innerHTML = `<strong>Warning!!!</strong> Scam sites often use these techniques to trick you into sharing your personal information.`;
-//     // }
-    
-//     warningModal.innerHTML = `<strong>Warning!!!</strong> Scam sites often use these techniques to trick you into sharing your personal information.`;
-//     }
-// 
+emailButton.addEventListener(`click`, () => {
+    const newMessage = document.createElement(`p`);
+    newMessage.classList.add(`newMessage`);
+    newMessage.innerHTML = `WARNING: Scam sites often use "games" promising rewards to trick you into sharing your personal information. 
+    just interacting with their pages will pass information about your computer. Use the hamburger icon in the top right.`;
+    emailModal.appendChild(newMessage);
+    emailButton.disabled = true; //added this after realizing that it kept printing after each press of the button.
+})
 
 

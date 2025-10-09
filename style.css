@@ -109,6 +109,7 @@ nav a {
     border: 5px groove darkred;
     box-shadow: 0 0 8px goldenrod;
     background-color: #000000;
+    margin-bottom: 20px;
 }
 
 .output {
@@ -208,4 +209,10 @@ nav a {
     border: 3px groove black;
     box-shadow: 0 0 10px goldenrod;
     cursor: pointer;
+}
+
+.newMessage {
+    font-weight: bold;
+    margin: 20px;
+    box-shadow: 0 0 20px;
 }
