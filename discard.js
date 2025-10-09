@@ -7,6 +7,8 @@
 //------------------------------------------------------------------//
 //------------------------------------------------------------------//
 
+// const menuToggle = document.getElementById(`menu-toggle`);
+// const sideMenu = document.getElementById(`side-menu`);
 
 //Wheel was more complicated to make and work correctly so placed a spinning image instead.
 //May go back to this once I work on the rest to make it work.

@@ -17,10 +17,9 @@
         <input id="hamburger-btn" type="checkbox" />
             <nav>
                 <ul class="side-menu">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">About</a></li>
-                    <li><a href="/">Shop</a></li>
-                    <li><a href="/">Contact</a></li>
+                    <li><a href="https://reportfraud.ftc.gov/">Report Fraud</a></li>
+                    <li><a href="https://complaint.ic3.gov/">Report Cyber Crime</a></li>
+                    <li><a href="https://www.seraphsecure.com/resources">Scam Resource Center</a></li>
                 </ul>
             </nav>
     </header>
@@ -32,6 +31,16 @@
     <button id="spinButton">This is the button!</button>
     <div id="output" class="output">
         <p id="message"></p>
+    </div>
+    <div id="emailModal" class="modal" style="display: none">
+        <div class="email-modal-content"></div>
+            <h3>Congratulations on the Big Win!</h3>
+            <p>To claim your reward, enter your email address below.</p>
+            <div id="email-form">
+                <input type="email" id="emailInput" placeholder="Enter fake email" required>
+                <button id="emailButton">Claim Reward NOW!</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>

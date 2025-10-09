@@ -4,16 +4,20 @@ const spinButton = document.getElementById(`spinButton`);
 const wheel = document.getElementById(`wheel`);
 const outputDiv = document.getElementById(`output`);
 const messageP = document.getElementById(`message`);
-const menuToggle = document.getElementById(`menu-toggle`);
-const sideMenu = document.getElementById(`side-menu`);
+
+//email modal
+const emailModal = document.getElementById(`emailModal`);
+const emailInput = document.getElementById(`emailInput`);
+const emailButton = document.getElementById(`emailButton`)
 
 //setting the state
 let isSpinning = false;
 let currentRotation = 0; //tracks rotation
+const popUpDelay = 1000; //1s delay added for email modal
 
 //Creating a disclaimer modal at the beginning
 const firstModal = document.createElement(`div`);
-firstModal.className = `modal`;
+firstModal.className = `firstModal`;
 firstModal.style.display = `flex`;
 
 const firstModalContent = document.createElement(`div`);
@@ -63,11 +67,31 @@ spinButton.addEventListener(`click`, function() {
         const spinDurration = 5000;
 
         setTimeout(() => {
-            if (isSpinning) {
-                gameMessage.textContent = `BIG WIN!!!!`;
-                outputDiv.style.display = `block`;
-                messageP.innerHTML = `<strong>Warning!!!</strong> Scam sites often use these techniques to trick you into sharing your personal information.`;
-            }          
-            }, spinDurration);
+            isSpinning = false;
+            spinButton.disabled = false;
+            gameMessage.textContent = `BIG WIN!!!!`;
+
+            setTimeout(() => {
+                emailModal.classList.add(`show`);
+                emailInput.value = ``;
+                emailModal.style.display = `flex`;
+            }, popUpDelay);
+            spinButton.disabled = true;
+            
+            // outputDiv.style.display = `block`;            
+            //messageP.innerHTML = `<strong>Warning!!!</strong> Scam sites often use these techniques to trick you into sharing your personal information.`;         
+        }, spinDurration);
     }
 });
+
+// function handleEmailSubmission() {
+//     const warningModal = document.querySelector(`#emailModal` `.email-modal-content`);
+//     if (!warningModal) {
+//     //     messageP.innerHTML = `<strong>Warning!!!</strong> Scam sites often use these techniques to trick you into sharing your personal information.`;
+//     // }
+    
+//     warningModal.innerHTML = `<strong>Warning!!!</strong> Scam sites often use these techniques to trick you into sharing your personal information.`;
+//     }
+// }
+
+
