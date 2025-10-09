@@ -34,7 +34,7 @@ nav {
     padding-top: 75px;
     transition: right 0.55s;
     border: 5px ridge darkred;
-    box-shadow: 0 0 20px darkred;
+    box-shadow: 0 0 10px rgb(83, 83, 83);
 }
 
 nav a {
@@ -54,11 +54,10 @@ nav a {
 }
 
 .line {
-    width: 36px;
-    height: 6px;
+    width: 25px;
+    height: 4px;
     margin: 6px;
     background-color: darkred;
-    box-shadow: 0 0 5px goldenrod;
 }
 
 #hamburger-btn {
