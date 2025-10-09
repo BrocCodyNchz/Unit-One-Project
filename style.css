@@ -6,7 +6,7 @@ body {
     background-color: black;
     color: white;
     text-align: center;
-    margin: 20px
+    margin: 20px;
 }
 
 .disclaimer {
@@ -16,8 +16,15 @@ body {
 }
 
 #gameMessage {
-    font-size: 24px;
+    font-size: 3rem;
+    font-family:'Arial Narrow Bold';
     margin: 20px;
+}
+
+#message {
+    font-size: 1.25em;
+    padding: 10px;
+    border: 5px dotted goldenrod;
 }
 
 #wheelContainer {
@@ -38,6 +45,10 @@ body {
     padding:  10px 20px;
     font-size: 18px;
     cursor: pointer;
+    color: white;
+    border: 5px groove darkred;
+    box-shadow: 0 0 8px darkred;
+    background-color: #000000;
 }
 
 .output {
@@ -55,33 +66,46 @@ body {
 }
 
 .modal {
+    display: flex;
     position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vm;
+    height: 100vh;
     background-color: white;
     background-size: cover;
     border: groove 0.8em;
     border-color: darkred;
+    box-shadow: 0 0 8px darkred;
+    font-size: 1.25rem;
+    transition: opacity 0.5s ease-out;
+    align-items: center;
 }
 
-.modal-content {
-    background-color: white;
-    padding: 5px;
+.modal-button {
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    opacity: 0;
+    /*cursor: pointer;*/
 }
 
 #menu-toggle {
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 30px;
+    left: 30px;
     font-size: 30;
     background: none;
-    border: none;
+    border: 1px groove darkred;
+    box-shadow: 0 0 10px darkred;
     cursor: pointer;
     color: whitesmoke;
     padding: 5px;
-    transition: 1s ease-in-out;
+    transition: transform 5s;
 }
 
 #side-menu.open + #menu-toggle {
-    color: white
+    color: white;
 }
 
 #close-menu {
@@ -95,9 +119,11 @@ body {
     position: fixed;
     top: 0;
     left: -300px;
-    width: 280px;
+    width: 200px;
     height: 100%;
-    background: none;
+    background-color: black;
+    border: 5px groove darkred;
+    box-shadow: 0 0 20px darkred;
 }
 
 #side-menu.open {
