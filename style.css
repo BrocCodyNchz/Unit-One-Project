@@ -65,9 +65,15 @@ nav a {
 }
 
 .disclaimer {
-    color: #000000;
+    color: white;
+    font-size: 3rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin: 2rem;
+    border: 15px dotted goldenrod;
+    background-image: url(https://danesh.wordpress.com/wp-content/uploads/2011/11/screen-shot-2011-11-10-at-pm-04-34-31-1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 20px darkred;
 }
 
 #gameMessage {
@@ -122,18 +128,22 @@ nav a {
 }
 
 .firstModal {
+    display: flex;
     position: fixed;
     left: 0;
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-color: white;
+    background-color: black;
     background-size: cover;
-    border: groove 0.8em;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: groove 0.8rem;
     border-color: darkred;
     box-shadow: 0 0 8px darkred;
     font-size: 1.25rem;
     align-items: center;
+    justify-content: center;
 }
 
 .modal-button {

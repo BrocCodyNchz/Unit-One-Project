@@ -25,8 +25,7 @@ firstModalContent.className = `modal-content`;
 
 const disclaimerText = document.createElement(`p`);
 disclaimerText.className = `disclaimer`;
-disclaimerText.textContent = `DISCLAIMER:
-This game is for educational purposes, helping users learn about common scam techniques. No personal data is collected or stored; all progress remains on your device. The first techinque is hiding the close button on a pop up, use the inspect tool to find the button to close a pop-up a safe example of scam tactics.`
+disclaimerText.textContent = `This game is for educational purposes, helping users learn about just a few common scam techniques. No personal data is collected or stored. This page is the first example in order to close this pop up, use the inspect tool to find the button that will close it.`
 firstModalContent.appendChild(disclaimerText);
 
 const continueButton = document.createElement(`img`);
@@ -75,7 +74,7 @@ spinButton.addEventListener(`click`, function() {
                 emailModal.classList.add(`show`);
                 emailInput.value = ``;
                 emailModal.style.display = `flex`;
-            }, popUpDelay);
+            }, popUpDelay); //popup occurs after a delay prommpting email address to claim prize.
             spinButton.disabled = true;
         }, spinDurration);
     }
