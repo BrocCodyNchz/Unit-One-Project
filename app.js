@@ -67,7 +67,7 @@ spinButton.addEventListener(`click`, function() {
         const newRotation = currentRotation + extraAngle + rotationNeed;
         wheel.style.transform = `rotate(${newRotation}deg)`;
 
-        const spinDurration = 5000;
+        const spinDurration = 8000;
 
         setTimeout(() => {
             isSpinning = false;
@@ -89,11 +89,11 @@ function handleEmail(event) {
         return;
     }
 
-    const newMessage = document.createElement(`p`);
-    newMessage.classList.add(`newMessage`);
-    newMessage.innerHTML = `Scam sites often use "games" promising rewards to trick you into sharing your personal information. 
-    Interacting with their pages alone will give them some unique information about you and your computer. This is called a fingerprint, use the hamburger icon in the top right.`;
-    emailModal.appendChild(newMessage);
+    const emailMessage = document.createElement(`p`);
+    emailMessage.classList.add(`emailMessage`);
+    emailMessage.innerHTML = `Scam sites often use "games" promising rewards to trick you into sharing your personal information. 
+    Interacting with their pages alone will give them some unique information about you and your computer. This is called browser fingerprinting, use the menu in the top right.`;
+    emailModal.appendChild(emailMessage);
     emailButton.disabled = true; //added this after realizing that it kept printing after each press of the button.
     emailInput.disabled = true; //added this for the same reason but later when I added the ability to click or hit enter.
 }
