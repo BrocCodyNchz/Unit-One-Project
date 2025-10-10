@@ -13,7 +13,7 @@ const emailButton = document.getElementById(`emailButton`)
 //setting the state
 let isSpinning = false;
 let currentRotation = 0; //tracks rotation
-const popUpDelay = 1250; //1.25s delay added for email modal
+const popUpDelay = 1250; //1.25s delay added for initial message on modal and email modal
 
 //Creating a disclaimer modal at the beginning
 const firstModal = document.createElement(`div`);
