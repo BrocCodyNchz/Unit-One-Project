@@ -13,7 +13,7 @@ const emailButton = document.getElementById(`emailButton`)
 //setting the state
 let isSpinning = false;
 let currentRotation = 0; //tracks rotation
-const popUpDelay = 1000; //1s delay added for email modal
+const popUpDelay = 1250; //1s delay added for email modal
 
 //Creating a disclaimer modal at the beginning
 const firstModal = document.createElement(`div`);
@@ -26,7 +26,11 @@ firstModalContent.className = `modal-content`;
 const disclaimerText = document.createElement(`p`);
 disclaimerText.className = `disclaimer`;
 disclaimerText.textContent = `This game is for educational purposes, helping users learn about just a few common scam techniques. No personal data is collected or stored. This page is the first example in order to close this pop up, use the inspect tool to find the button that will close it.`
-firstModalContent.appendChild(disclaimerText);
+
+setTimeout(() => {
+    firstModalContent.appendChild(disclaimerText);
+}, popUpDelay);
+
 
 const continueButton = document.createElement(`img`);
 continueButton.src = `https://imgs.search.brave.com/YjzvgfxNbCVnYJua-mCyUMjzXD5qaSk8xTssWmuy830/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbnNjb3V0LmNv/bS9pY29uL3ByZW1p/dW0vcG5nLTI1Ni10/aHVtYi9jb250aW51/ZS1pY29uLXN2Zy1k/b3dubG9hZC1wbmct/MTI5OTI2MTAucG5n/P2Y9d2VicCZ3PTEy/OA`;
@@ -80,13 +84,20 @@ spinButton.addEventListener(`click`, function() {
     }
 });
 
-emailButton.addEventListener(`click`, () => {
+function handleEmail(event) {
+    if (event.type === `keydown` && event.key !== `Enter`) {
+        return;
+    }
+
     const newMessage = document.createElement(`p`);
     newMessage.classList.add(`newMessage`);
-    newMessage.innerHTML = `WARNING: Scam sites often use "games" promising rewards to trick you into sharing your personal information. 
-    just interacting with their pages will pass information about your computer. Use the hamburger icon in the top right.`;
+    newMessage.innerHTML = `Scam sites often use "games" promising rewards to trick you into sharing your personal information. 
+    Interacting with their pages alone will give them some unique information about you and your computer. This is called a fingerprint, use the hamburger icon in the top right.`;
     emailModal.appendChild(newMessage);
     emailButton.disabled = true; //added this after realizing that it kept printing after each press of the button.
-})
+    emailInput.disabled = true; //added this for the same reason but later when I added the ability to click or hit enter.
+}
 
+emailButton.addEventListener(`click`, handleEmail);
+emailInput.addEventListener(`keydown`, handleEmail);
 
