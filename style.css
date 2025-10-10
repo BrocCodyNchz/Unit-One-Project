@@ -75,6 +75,7 @@ nav a {
     background-repeat: no-repeat;
     background-color: black;
     box-shadow: 0 0 20px goldenrod;
+    opacity: .9;
 }
 
 #gameMessage {
